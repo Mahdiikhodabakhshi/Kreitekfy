@@ -1,0 +1,135 @@
+<div class="row my-2 justify-content-between">
+  <button routerLink="/user" class="btn btn-warning mb-3"><fa-icon [icon]="faArrowLeft"></fa-icon></button>
+  <div class="col-5"  style="background-color: #cbf3f0; padding: 10px 15px;border-radius: 20px" >
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+        <div class=" mb-3">
+          <!-- Indicamos con el formcontrolname el atributo a incluir-->
+
+          <label class="form-label " >
+            Username : {{username}}</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input formControlName="firstName"
+                 type="text" class="form-control"
+                 id="firstname" value="{{firstname}}"
+                 placeholder="firstname">
+          <label for="firstname">
+            firstname</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input formControlName="lastName"
+                 type="text" class="form-control"
+                 id="lastname" value="{{lastname}}"
+                 placeholder="lastname">
+          <label for="lastname">
+            lastname</label>
+        </div>
+      <div class="form-floating mb-3">
+        <input formControlName="email"
+               type="email" class="form-control"
+               id="email" value="{{email}}"
+               placeholder="email">
+        <label for="email">
+          email</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input formControlName="password"
+               type="password" class="form-control"
+               id="password"
+               placeholder="password">
+        <label for="password">
+          password</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input formControlName="repeatPassword"
+               type="password" class="form-control"
+               id="repeatPassword"
+               placeholder="password">
+        <label for="password">
+          repeat Password</label>
+        <div *ngIf="repeatPassword != password" class="alert alert-warning" role="alert">
+          <div >
+            password doesnt match
+          </div>
+
+          <!--                    <div *ngIf="nombre.errors?.['maxlength']">-->
+          <!--                      tiene que tener maximo 10 caracteres-->
+          <!--                    </div>-->
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+        <button type="submit" class="btn btn-primary"
+                data-bs-dismiss="modal"  [disabled]="userForm.invalid">Save changes</button>
+
+    </form>
+  </div>
+  <div class="col-5" style="background-color: #fdfcdc; padding: 10px 15px;border-radius: 20px">
+    <div>
+      <h3 >Historia</h3>
+      <div class="panel mt-5">
+        <div class="panel-heading">
+          <div class="row d-flex justify-content-around mt-3">
+            <div class="col-4 col-sm-3 col-xs-12">
+              <h4 class="title">Reproduciones</h4>
+            </div>
+            <div class="col-4 col-sm-3">
+              <!--        <h5 class="newUser" (click)="newUser()"-->
+              <!--            data-bs-toggle="modal"-->
+              <!--            data-bs-target="#miModal"-->
+              <!--        ><fa-icon [icon]="faCirclePlus"></fa-icon> Crear nuevo usuario-->
+              <!--        </h5>-->
+            </div>
+            <!--      <div class="col-sm-3 col-xs-12  d-flex justify-content-center ">-->
+            <!--        <button type="button" class="btn btn-primary form-control" data-bs-toggle="modal" data-bs-target="#filterModal">-->
+            <!--          Filters-->
+            <!--        </button>-->
+            <!--        <button (click)="refreshPage()" type="button" class="btn btn-primary form-control" style="width: 2.7rem ;margin-left: 10px"><fa-icon [icon]="faRefresh"></fa-icon></button>-->
+            <!--      </div>-->
+          </div>
+        </div>
+        <div class="panel-body table-responsive">
+          <table class="table table-dark table-striped text-center">
+            <thead>
+            <tr>
+              <th  class="sortHover" scope="col">fecha </th>
+              <th  class="sortHover" scope="col">cancion </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let history of historyList">
+              <td>{{history.historyDate | date:'short'}}</td>
+              <td>{{history.songTitle}}</td>
+
+
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="panel-footer">
+          <div class="row   ">
+            <div class="col d-flex justify-content-between ">
+              <button class="btn " [disabled]="first" (click)="toPrevious()" style="background-color: #dd290f ; border-radius: 20px;color: #ffffff"><fa-icon [icon]="faArrowLeft"></fa-icon></button>
+              <button class="btn " [disabled]="last" (click)="toNext()" style="background-color: #02c39a ; border-radius: 20px;color: #ffffff"><fa-icon [icon]="faArrowRight"></fa-icon></button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

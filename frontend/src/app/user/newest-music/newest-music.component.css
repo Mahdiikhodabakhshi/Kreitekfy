@@ -1,0 +1,27 @@
+hr{
+  background-color: white;
+  height: 10px;
+  border-radius: 20px;
+
+}
+
+.card img{
+  border-radius: 10px;
+}
+
+.card{
+  transition: all 0.8s ease;
+  border: none;
+
+  background-color: transparent;
+}
+.card:hover{
+  cursor: pointer;
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;}
+
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

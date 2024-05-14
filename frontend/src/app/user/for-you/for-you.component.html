@@ -1,0 +1,16 @@
+
+
+<div class="" style="margin: 7rem 0 10rem;">
+  <h3 style="color: #c4c3ca">{{title | titlecase}}</h3><hr>
+
+  <div class="d-flex flex-row flex-wrap justify-content-around">
+    <div *ngFor="let song of forYouSongsFromParent" class="card" style="width: 12rem;height: 12rem" [routerLink]="'song/'+song.id">
+      <img [src]="song.albumImageType+song.albumImage" class="card-img-top" [alt]="song.albumTitle">
+      <div class="card-body">
+        <p class="card-title fw-bold text-light">{{song.title}}</p>
+        <p class="card-text text-light " *ngFor="let art of song.artists">{{art.name}}</p>
+      </div>
+
+    </div>
+  </div>
+</div>

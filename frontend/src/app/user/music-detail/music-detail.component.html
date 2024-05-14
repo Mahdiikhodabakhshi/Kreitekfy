@@ -1,0 +1,25 @@
+<div class="row mt-5"  style="height: 100vh;  ">
+  <div class="detailCol d-flex flex-row">
+    <img [src]="songInfo.albumImageType+songInfo.albumImage" class="imageAlbum" [alt]="songInfo.albumTitle">
+    <div class="songInfo">
+      <h4>Album {{songInfo.albumTitle}}</h4>
+      <h2 class="ms-2">{{songInfo.title}}</h2>
+      <p class="ms-5"><fa-icon [icon]="faPlay"></fa-icon> {{songInfo.totalViews}} <fa-icon style="color: red" [icon]="faHeart"></fa-icon> {{songInfo.totalRate}} </p>
+
+
+
+<!--      <ngb-rating [(rate)]="personalRate" (rateChange)="addRate($event)" [max]="5" class="star" />-->
+      <div class="rating" >
+        <span class="star" *ngFor="let star of stars; let i = index" (click)="updateRating(i)" [class.filled]="i < currentRating">&#9733;</span>
+      </div>
+
+
+      <button (click)="playMusic()" class="playBtn"><fa-icon  [icon]="faPlay"></fa-icon> </button>
+    </div>
+
+  </div>
+  <app-album-song [albumId]="songInfo.albumId" [albumSongs]="albumSongs?.songs"></app-album-song>
+
+</div>
+
+

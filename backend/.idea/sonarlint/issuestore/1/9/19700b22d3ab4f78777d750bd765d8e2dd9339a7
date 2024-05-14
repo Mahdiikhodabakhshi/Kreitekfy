@@ -1,0 +1,11 @@
+
+
+java:S1192"HDefine a constant instead of duplicating this literal "artists" 4 times.(ÒÈş›øÿÿÿÿ8×§Òâõ1J$95765bba-1d16-4b69-9d03-b77351d23f9b
+
+java:S1192 "FDefine a constant instead of duplicating this literal "album" 4 times.(ıç›šøÿÿÿÿ8×§Òâõ1J$c24d981f-4944-4a1b-b6f9-65c6659882ab
+‘
+java:S1192""IDefine a constant instead of duplicating this literal "category" 4 times.(ÔÚ»üşÿÿÿÿ8Ø§Òâõ1J$c6fb999e-3e88-4bb4-9bd1-6014f2ea53c3
+
+java:S1192"FDefine a constant instead of duplicating this literal "title" 6 times.(„ËÃÑùÿÿÿÿ8Ø§Òâõ1J$be85f9fe-c9b9-49d3-ae69-3f8e229d61aa
+š
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(š°ßõûÿÿÿÿ8¿¨Òâõ1J$86899961-3cd2-404d-bc85-536302755a00

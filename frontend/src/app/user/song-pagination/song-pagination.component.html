@@ -1,0 +1,91 @@
+<div class="row mt-5">
+  <button [routerLink]="['/user']" class="btn btn-outline-warning mb-2">Pagina inicio</button>
+  <div class="col-12 ">
+
+
+    <h3 style="color: #c4c3ca;display: inline-block">{{title | titlecase}}</h3>
+    <div style="float: right ; font-size: x-large;" >
+      <button style="color: #c4c3ca; background-color: transparent; border-radius: 50px"  data-bs-toggle="modal" data-bs-target="#filterModal"><fa-icon [icon]="faFilter"></fa-icon></button>
+    </div>
+    <hr>
+    <div class="d-flex flex-row flex-wrap   justify-content-around">
+      <div *ngFor="let song of songInfo" class="card my-3" style="width: 14rem;" [routerLink]="'/user/song/'+song.id">
+        <img [src]="song.albumImageType+song.albumImage" class="card-img-top" [alt]="song.albumName">
+        <div class="card-body">
+          <p class="card-title fw-bold text-light">{{song.title}}</p>
+          <p class="card-text text-light " *ngFor="let art of song.artists">{{art.name}}</p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class=" my-5 ">
+      <div class="col text-light  text-center ">Page <b>{{page + 1}}</b> out of <b>{{totalPages}}</b> entries</div>
+      <div class="col mt-2 text-center d-flex justify-content-center">
+        <ul class="pagination hidden-xs pull-right">
+          <li><button [disabled]="first" class="button-82-pushable" role="button" (click)="toPreviousPage()">
+            <span class="button-82-shadow"></span>
+            <span class="button-82-edge button-82-edge-pre"></span>
+            <span class="button-82-front btn-color-pre text">Previous</span>
+          </button></li>
+
+
+          <li class="active text-warning" style="margin: 1px 15px"> <strong>{{page + 1}}</strong>  </li>
+
+          <li><button [disabled]="last" class="button-82-pushable" role="button" (click)="toNextPage()">
+            <span class="button-82-shadow"></span>
+            <span class="button-82-edge button-82-edge-next"></span>
+            <span class="button-82-front btn-color-next text" style="padding: 1px 15px">Next</span>
+          </button></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+    </div>
+
+
+</div>
+
+<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Filtros</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-floating mb-3">
+          <input class="form-control" type="text" [(ngModel)]="categoryFilter" name="category" id="estilo" placeholder="Estilo">
+          <label for="estilo">Por Estilo</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" type="text" [(ngModel)]="titleFilter" name="title" id="title" placeholder="Titulo">
+          <label for="title">Por Titulo</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" type="text" [(ngModel)]="artistFilter" name="artist" id="artist" placeholder="Artista">
+          <label for="artist">Por Artista</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input class="form-control" type="text" [(ngModel)]="albumFilter" name="album" id="album" placeholder="Album">
+          <label for="album">Por Album</label>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-outline-warning"  (click)="cleanSearch()">Limpiar la busqueda</button>
+        <button type="submit" class="btn btn-success" data-bs-dismiss="modal" (click)="searchByFilters()">Buscar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+<div class="panel">
+  <div class="panel-heading">
+    <div class="row d-flex justify-content-around mt-3">
+      <div class="col-4 col-sm-3 col-xs-12">
+        <h4 class="title">Mas musicas</h4>
+      </div>
+      <div class="col-4 col-sm-3">
+<!--        <h5 class="newUser" (click)="newUser()"-->
+<!--            data-bs-toggle="modal"-->
+<!--            data-bs-target="#miModal"-->
+<!--        ><fa-icon [icon]="faCirclePlus"></fa-icon> Crear nuevo usuario-->
+<!--        </h5>-->
+      </div>
+<!--      <div class="col-sm-3 col-xs-12  d-flex justify-content-center ">-->
+<!--        <button type="button" class="btn btn-primary form-control" data-bs-toggle="modal" data-bs-target="#filterModal">-->
+<!--          Filters-->
+<!--        </button>-->
+<!--        <button (click)="refreshPage()" type="button" class="btn btn-primary form-control" style="width: 2.7rem ;margin-left: 10px"><fa-icon [icon]="faRefresh"></fa-icon></button>-->
+<!--      </div>-->
+    </div>
+  </div>
+  <div class="panel-body table-responsive">
+    <table class="table table-dark table-striped text-center">
+      <thead>
+      <tr>
+        <th  class="sortHover" scope="col">ID </th>
+        <th  class="sortHover" scope="col">Nombre </th>
+        <th  class="sortHover" scope="col">duration  </th>
+
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let song of albumSongs">
+        <td>{{song.id}}</td>
+        <td>{{song.title}}</td>
+        <td>{{song.duration}}</td>
+
+        <td>
+
+          <ul class="action-list">
+<!--            <li><a (click)="loadUser(user)" data-bs-toggle="modal"-->
+<!--                   data-bs-target="#miModal" data-tip="edit" class="text-success"><fa-icon [icon]="faEdit" ></fa-icon></a></li>-->
+<!--            <li><a data-bs-toggle="modal" data-bs-target="#deleteConfirmation" (click)="prepareItemToDelete(user.id)"  data-tip="delete" class="text-danger"><fa-icon [icon]="faTrash"></fa-icon></a></li>-->
+<!--            &lt;!&ndash;
+                (click)="deleteUser(user.id)"&ndash;&gt;-->
+            <li [routerLink]="'/user/song/'+song.id"><a data-tip="Escuchar"    ><fa-icon  [icon]="faPlay"></fa-icon> </a></li>
+          </ul>
+        </td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <div class="panel-footer">
+    <div class="row  ">
+<!--      <div class="col col-sm-6 col-xs-6">Page <b>{{page + 1}}</b> out of <b>{{totalPages}}</b> entries</div>-->
+<!--      <div class="col-sm-6 col-xs-6 d-flex justify-content-end">-->
+<!--        <ul class="pagination hidden-xs pull-right">-->
+<!--          <li><button [disabled]="first" class="button-82-pushable" role="button" (click)="toPreviosPage()">-->
+<!--            <span class="button-82-shadow"></span>-->
+<!--            <span class="button-82-edge button-82-edge-pre"></span>-->
+<!--            <span class="button-82-front btn-color-pre text">-->
+<!--                                  Previous-->
+<!--                                </span>-->
+<!--          </button></li>-->
+
+
+<!--          <li class="active" style="margin: 1px 15px"> {{page + 1}} </li>-->
+
+<!--          <li><button [disabled]="last" class="button-82-pushable" role="button" (click)="toNextPage()">-->
+<!--            <span class="button-82-shadow"></span>-->
+<!--            <span class="button-82-edge button-82-edge-next"></span>-->
+<!--            <span class="button-82-front btn-color-next text" style="padding: 1px 15px">-->
+<!--                                  Next-->
+<!--                                </span>-->
+<!--          </button></li>-->
+<!--        </ul>-->
+
+<!--      </div>-->
+    </div>
+  </div>
+</div>

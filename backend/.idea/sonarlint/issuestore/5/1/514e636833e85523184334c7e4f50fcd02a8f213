@@ -1,0 +1,15 @@
+
+­
+java:S1488q"eImmediately return this expression instead of assigning it to the temporary variable "userMusicList".(ˆ‰Ãöûÿÿÿÿ8Ì±›ğõ1J$41fe0445-35c2-4944-8a5e-568bb6c9de5c
+’
+java:S1128"ORemove this unused import 'com.kreitek.Kreitekfy.song.application.dto.SongDTO'.(ÅŞØ8‰òüŠ÷1J$1fe5e283-76a5-435e-beab-4a701317ae61
+ 
+java:S1128"XRemove this unused import 'com.kreitek.Kreitekfy.song.application.services.SongService'.(Ì¦…ôüÿÿÿÿ8ŠòüŠ÷1J$eb5b4a2e-51fd-4dcb-b126-5e107ad8e6aa
+
+java:S1128"JRemove this unused import 'com.kreitek.Kreitekfy.song.domain.entity.Song'.(ÄˆÓò8ŠòüŠ÷1J$68ae14c7-afae-4118-bae0-6e1f10614b5c
+—
+java:S1128"ORemove this unused import 'com.kreitek.Kreitekfy.user.application.dto.UserDto'.(«Éµæüÿÿÿÿ8ŠòüŠ÷1J$368d705f-0e11-4517-b118-5982c17bb7b9
+Ÿ
+java:S1128"WRemove this unused import 'com.kreitek.Kreitekfy.user.application.service.AuthService'.(şœå‚şÿÿÿÿ8ŠòüŠ÷1J$86ae800b-4279-4c69-99b6-450f82b8389c
+
+java:S1128	"JRemove this unused import 'com.kreitek.Kreitekfy.user.domain.entity.User'.(Ü®º¥8‹òüŠ÷1J$bdbd2bd5-25f8-45cf-93ac-91cd99b49a50

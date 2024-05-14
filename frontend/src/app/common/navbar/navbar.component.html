@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/inicio"> <fa-icon [icon]="faSpotify"></fa-icon> Kreitekly </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
+
+<!--      <ul class="navbar-nav mb-2 mb-lg-0">-->
+<!--        <li *ngIf="isLogged()" class="nav-item " style="margin-right: 19rem">-->
+
+<!--            <select [(ngModel)]="filterStyle" class="form-select" (change)="filterChange()" >-->
+<!--              <option value="" >todos</option>-->
+<!--              <option *ngFor="let cat of categories" [value]="cat.name">{{cat.name}}</option>-->
+
+<!--              &lt;!&ndash; Add more options as needed &ndash;&gt;-->
+<!--            </select>-->
+
+
+
+<!--        </li>-->
+<!--        <li class="nav-item align-content-center " style="background-color: #a8dadc; border-radius: 20px">-->
+<!--          <a class="nav-link "  [routerLink]="'user/profile/'+userId" aria-current="page" *ngIf="isLogged()" >{{userId}}</a>-->
+<!--        </li>-->
+
+
+<!--      </ul>-->
+      <ul class=" navbar-nav " >
+<!--        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+       <li class="nav-item"><button *ngIf="!isLogged()" routerLink="/login" class="btn btn-outline-success" type="submit">Login</button></li>
+        <li class="nav-item"><button *ngIf="isLogged()" (click)="logout()" class="btn btn-outline-danger" type="reset">Logout</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
